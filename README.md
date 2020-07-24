@@ -1,6 +1,6 @@
 # bridgetown-haml
 
-A Bridgetown plugin to provide support for [Haml templates](http://slim-lang.com).
+A Bridgetown plugin to provide support for [Haml templates](http://haml.info/).
 
 _Requires Bridgetown 0.16 or greater._
 
