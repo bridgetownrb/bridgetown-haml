@@ -23,7 +23,7 @@ Simply name your page, layout, or partial with a `.haml` extension. The availabl
 
 ## Contributing
 
-1. Fork it (https://github.com/bridgetown/bridgetown-haml/fork)
+1. Fork it (https://github.com/bridgetownrb/bridgetown-haml/fork)
 2. Clone the fork using `git clone` to your local development machine.
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit -am 'Add some feature'`)
