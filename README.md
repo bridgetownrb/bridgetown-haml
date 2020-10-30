@@ -2,7 +2,7 @@
 
 A Bridgetown plugin to provide support for [Haml templates](http://haml.info/).
 
-_Requires Bridgetown 0.16 or greater._
+_Requires Bridgetown 0.18 or greater._
 
 ## Installation
 
@@ -15,6 +15,8 @@ $ bundle add bridgetown-haml -g bridgetown_plugins
 ## Usage
 
 Simply name your page, layout, or partial with a `.haml` extension. The available features will be fairly analogous to [the ERB support](https://www.bridgetownrb.com/docs/erb-and-beyond#haml-and-slim) in Bridgetown, including support for helpers, partials, and rendering Liquid components. You can even [embed Markdown and other template languages](https://github.com/haml/haml/blob/master/REFERENCE.md#filters-filters) using standard Haml syntax.
+
+You can also add `template_engine: haml` to your file's front matter and use any extension you want. For example, you could add `data.xml` to your source folder and simply make sure the front matter contains `template_engine: haml`.
 
 ## Testing
 
