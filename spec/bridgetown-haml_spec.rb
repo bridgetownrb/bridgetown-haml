@@ -23,6 +23,7 @@ describe(BridgetownHaml) do
   end
   let(:site) { Bridgetown::Site.new(config) }
   let(:contents) { File.read(dest_dir("index.html")) }
+  let(:dataxml) { File.read(dest_dir("data.xml")) }
   before(:each) do
     metadata = metadata_defaults.merge(metadata_overrides).to_yaml.sub("---\n", "")
     File.write(source_dir("_data/site_metadata.yml"), metadata)
@@ -37,5 +38,9 @@ describe(BridgetownHaml) do
     expect(contents).to match "<h2>TITLE: I'm a Haml title!</h2>"
     expect(contents).to match "<footer>one, two, and three</footer>"
     expect(contents).to match "<li>Nifty!</li>"
+  end
+
+  it "outputs an XML file configured to use Haml" do
+    expect(dataxml).to match "<parent>\n<child>This is a child node.</child>\n</parent>"
   end
 end

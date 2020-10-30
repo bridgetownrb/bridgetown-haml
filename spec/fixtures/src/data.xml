@@ -1,0 +1,6 @@
+---
+template_engine: haml
+---
+
+%parent
+  %child This is a child node.

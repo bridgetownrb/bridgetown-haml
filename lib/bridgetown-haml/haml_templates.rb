@@ -41,6 +41,16 @@ module Bridgetown
           haml_renderer.render(haml_view)
         end
       end
+
+      def matches(ext, convertible)
+        return true if convertible.data[:template_engine] == "haml"
+
+        super(ext)
+      end
+
+      def output_ext(ext)
+        ext == ".haml" ? ".html" : ext
+      end
     end
   end
 end
