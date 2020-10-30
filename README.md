@@ -14,7 +14,7 @@ $ bundle add bridgetown-haml -g bridgetown_plugins
 
 ## Usage
 
-Simply name your page, layout, or partial with a `.haml` extension. The available features will be fairly analogous to [the ERB support](https://beta.bridgetownrb.com/docs/erb-and-beyond#haml-and-slim) in Bridgetown, including support for helpers, partials, and rendering Liquid components. You can even [embed Markdown and other template languages](https://github.com/haml/haml/blob/master/REFERENCE.md#filters-filters) using standard Haml syntax.
+Simply name your page, layout, or partial with a `.haml` extension. The available features will be fairly analogous to [the ERB support](https://www.bridgetownrb.com/docs/erb-and-beyond#haml-and-slim) in Bridgetown, including support for helpers, partials, and rendering Liquid components. You can even [embed Markdown and other template languages](https://github.com/haml/haml/blob/master/REFERENCE.md#filters-filters) using standard Haml syntax.
 
 ## Testing
 
