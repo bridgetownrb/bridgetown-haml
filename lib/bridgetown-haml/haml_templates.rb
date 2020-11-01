@@ -19,6 +19,7 @@ module Bridgetown
 
   module Converters
     class HamlTemplates < Converter
+      priority :highest
       input :haml
 
       # Logic to do the Haml content conversion.
@@ -29,6 +30,8 @@ module Bridgetown
       #
       # @return [String] The converted content.
       def convert(content, convertible)
+        return content if convertible.data[:template_engine] != "haml"
+
         haml_view = Bridgetown::HamlView.new(convertible)
 
         haml_renderer = Tilt::HamlTemplate.new(convertible.relative_path) { content }
@@ -45,7 +48,9 @@ module Bridgetown
       def matches(ext, convertible)
         return true if convertible.data[:template_engine] == "haml"
 
-        super(ext)
+        super(ext).tap do |ext_matches|
+          convertible.data[:template_engine] = "haml" if ext_matches
+        end
       end
 
       def output_ext(ext)
