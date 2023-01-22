@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "tilt/haml"
+require "haml"
 
 module Bridgetown
   class HamlView < RubyTemplateView
@@ -11,9 +11,9 @@ module Bridgetown
       partial_segments.last.sub!(%r!^!, "_")
       partial_name = partial_segments.join("/")
 
-      Tilt::HamlTemplate.new(
+      Haml::Template.new(
         site.in_source_dir(site.config[:partials_dir], "#{partial_name}.haml")
-      ).render(self, options)
+      ).render(self, options).html_safe
     end
   end
 
@@ -34,7 +34,7 @@ module Bridgetown
 
         haml_view = Bridgetown::HamlView.new(convertible)
 
-        haml_renderer = Tilt::HamlTemplate.new(convertible.relative_path) { content }
+        haml_renderer = Haml::Template.new(convertible.relative_path) { content }
 
         if convertible.is_a?(Bridgetown::Layout)
           haml_renderer.render(haml_view) do

@@ -2,19 +2,25 @@
 
 A Bridgetown plugin to provide support for [Haml templates](http://haml.info/).
 
-_Requires Bridgetown 0.18 or greater._
-
-## Installation
+## Installation for Bridgetown 1.2+
 
 Run this command to add this plugin to your site's Gemfile:
 
 ```shell
-$ bundle add bridgetown-haml -g bridgetown_plugins
+$ bundle add bridgetown-haml
 ```
+
+And then add the initializer to your configuration in `config/initializers.rb`:
+
+```ruby
+init :"bridgetown-haml"
+```
+
+(For Bridgetown 1.1 or earlier, [read these instructions](https://github.com/bridgetownrb/bridgetown-slim/tree/v1.1.1).)
 
 ## Usage
 
-Simply name your page, layout, or partial with a `.haml` extension. The available features will be fairly analogous to [the ERB support](https://www.bridgetownrb.com/docs/erb-and-beyond#haml-and-slim) in Bridgetown, including support for helpers, partials, and rendering Liquid components. You can even [embed Markdown and other template languages](https://github.com/haml/haml/blob/master/REFERENCE.md#filters-filters) using standard Haml syntax.
+Simply name your page, layout, or partial with a `.haml` extension. The available features will be fairly analogous to [the ERB support](https://www.bridgetownrb.com/docs/template-engines/erb-and-beyond#haml-and-slim) in Bridgetown, including support for helpers, partials, and rendering Liquid components. You can even [embed Markdown and other template languages](https://github.com/haml/haml/blob/master/REFERENCE.md#filters-filters) using standard Haml syntax.
 
 You can also add `template_engine: haml` to your file's front matter and use any extension you want. For example, you could add `data.xml` to your source folder and simply make sure the front matter contains `template_engine: haml`.
 

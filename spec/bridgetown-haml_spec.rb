@@ -10,7 +10,9 @@ describe(BridgetownHaml) do
       "root_dir"     => root_dir,
       "source"       => source_dir,
       "destination"  => dest_dir,
-    }, overrides))
+    }, overrides)).tap do |conf|
+      conf.run_initializers! context: :static
+    end
   end
   let(:metadata_overrides) { {} }
   let(:metadata_defaults) do
@@ -33,7 +35,7 @@ describe(BridgetownHaml) do
 
   it "outputs Haml template content" do
     expect(contents).to match "<p>This example shows you how a basic Haml file looks.</p>"
-    expect(contents).to match "<title>I'm a Haml title!</title>"
+    expect(contents).to match "<title>I&#39;m a Haml title!</title>"
     expect(contents).to match "<h1>Markup examples</h1>"
     expect(contents).to match "<h2>TITLE: I'm a Haml title!</h2>"
     expect(contents).to match "<footer>one, two, and three</footer>"
